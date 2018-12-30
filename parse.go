@@ -43,7 +43,7 @@ func Parse(fs *flag.FlagSet, args []string, options ...Option) error {
 
 		err = c.configFileParser(f, func(name, value string) error {
 			if fs.Lookup(name) == nil {
-				return errors.Errorf("config file flag %q not defined in flag set", name)
+				return nil
 			}
 
 			if provided[name] {
